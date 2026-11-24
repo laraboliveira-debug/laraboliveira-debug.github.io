@@ -1,1 +1,1063 @@
-<h1>olá meu nome é lara </h1>
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lara Brenda • 17 anos | Pompeia, SP</title>
+  <meta name="description" content="Cantinho pessoal de Lara Brenda, 17 anos, moradora de Pompeia - SP. Conheça meus interesses, projetos, sonhos e formas de contato." />
+
+  <!-- =====================================================================
+       FONTES DO GOOGLE FONTS (Plus Jakarta Sans & Poppins)
+       ===================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- =====================================================================
+       TAILWIND CSS VIA CDN + CONFIGURAÇÃO DE TEMA PERSONALIZADO
+       Você pode ajustar cores, fontes e animações diretamente aqui!
+       ===================================================================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Poppins"', 'sans-serif'],
+          },
+          colors: {
+            lilac: {
+              50: '#FAF7FD',
+              100: '#F3ECFA',
+              200: '#E5D5F6',
+              300: '#D1B3EE',
+              400: '#B886E3',
+              500: '#9D5CD6',
+              600: '#833EB8',
+              700: '#6B2F96',
+              800: '#58287A',
+              900: '#27173D',
+            },
+            night: {
+              950: '#0B0816',
+              900: '#120D24',
+              850: '#181230',
+              800: '#211940',
+              700: '#2F2459',
+            }
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            floatDelayed: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-8px) rotate(3deg)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.55', transform: 'scale(1)' },
+              '50%': { opacity: '0.85', transform: 'scale(1.06)' },
+            }
+          },
+          animation: {
+            'float': 'float 5s ease-in-out infinite',
+            'float-delayed': 'floatDelayed 6s ease-in-out 1.5s infinite',
+            'pulse-soft': 'pulseSoft 7s ease-in-out infinite',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Script rápido no <head> para aplicar o tema salvo antes da página renderizar (evita flash claro/escuro) -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('lara-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {
+        // Fallback seguro caso localStorage esteja indisponível
+      }
+    })();
+  </script>
+</head>
+
+<body class="bg-lilac-50 text-[#1E1533] dark:bg-night-950 dark:text-[#F4F0FF] font-sans antialiased selection:bg-purple-300 selection:text-purple-950 dark:selection:bg-purple-500/40 dark:selection:text-white transition-colors duration-300 overflow-x-hidden">
+
+  <!-- =====================================================================
+       ELEMENTOS DECORATIVOS DE FUNDO (Luzes difusas em lilás e rosa pastel)
+       ===================================================================== -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-28 -left-24 w-80 h-80 sm:w-[28rem] sm:h-[28rem] rounded-full bg-purple-300/35 dark:bg-purple-700/20 blur-3xl animate-pulse-soft"></div>
+    <div class="absolute top-1/3 -right-28 w-72 h-72 sm:w-[26rem] sm:h-[26rem] rounded-full bg-pink-200/45 dark:bg-fuchsia-800/15 blur-3xl animate-pulse-soft"></div>
+    <div class="absolute bottom-0 left-1/4 w-80 h-80 sm:w-[30rem] sm:h-[30rem] rounded-full bg-indigo-200/35 dark:bg-indigo-900/25 blur-3xl"></div>
+  </div>
+
+  <!-- =====================================================================
+       1. NAVEGAÇÃO SUPERIOR (Header fixo com Glassmorphism e Botão de Tema)
+       ===================================================================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white/75 dark:bg-night-950/75 border-b border-purple-200/60 dark:border-purple-500/15 transition-colors duration-300">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between" aria-label="Navegação Principal">
+      
+      <!-- Logo / Assinatura -->
+      <a href="#inicio" class="group flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 rounded-xl p-1">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-400 text-white font-display font-bold text-sm flex items-center justify-center shadow-md shadow-purple-500/25 group-hover:scale-105 transition-transform">
+          LB
+        </span>
+        <span class="font-display font-bold text-lg tracking-tight text-[#1E1533] dark:text-white">
+          Lara<span class="text-purple-600 dark:text-purple-400">.</span>
+        </span>
+      </a>
+
+      <!-- Links de Navegação (Desktop) -->
+      <div class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#inicio" class="px-3.5 py-2 rounded-xl text-sm font-medium text-[#4A3D66] dark:text-purple-200/85 hover:text-purple-700 dark:hover:text-white hover:bg-purple-100/70 dark:hover:bg-white/5 transition-all">
+          Início
+        </a>
+        <a href="#sobre" class="px-3.5 py-2 rounded-xl text-sm font-medium text-[#4A3D66] dark:text-purple-200/85 hover:text-purple-700 dark:hover:text-white hover:bg-purple-100/70 dark:hover:bg-white/5 transition-all">
+          Sobre Mim
+        </a>
+        <a href="#interesses" class="px-3.5 py-2 rounded-xl text-sm font-medium text-[#4A3D66] dark:text-purple-200/85 hover:text-purple-700 dark:hover:text-white hover:bg-purple-100/70 dark:hover:bg-white/5 transition-all">
+          Interesses
+        </a>
+        <a href="#pompeia" class="px-3.5 py-2 rounded-xl text-sm font-medium text-[#4A3D66] dark:text-purple-200/85 hover:text-purple-700 dark:hover:text-white hover:bg-purple-100/70 dark:hover:bg-white/5 transition-all">
+          Pompeia - SP
+        </a>
+        <a href="#contato" class="px-3.5 py-2 rounded-xl text-sm font-medium text-[#4A3D66] dark:text-purple-200/85 hover:text-purple-700 dark:hover:text-white hover:bg-purple-100/70 dark:hover:bg-white/5 transition-all">
+          Contato
+        </a>
+      </div>
+
+      <!-- Controles à Direita (Alternar Tema + Botão Menu Mobile) -->
+      <div class="flex items-center gap-2">
+        <!-- Botão Modo Claro / Escuro -->
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Alternar entre modo claro e modo escuro"
+          class="p-2.5 sm:px-3.5 sm:py-2 rounded-xl border border-purple-200/80 dark:border-purple-500/25 bg-white/80 dark:bg-night-850/90 text-purple-700 dark:text-purple-200 hover:bg-purple-100/80 dark:hover:bg-night-800 shadow-sm flex items-center gap-2 text-xs font-semibold transition-all active:scale-95"
+        >
+          <!-- Ícone Sol (visível no modo escuro) -->
+          <svg id="icon-sun" class="w-4 h-4 hidden dark:block text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Ícone Lua (visível no modo claro) -->
+          <svg id="icon-moon" class="w-4 h-4 block dark:hidden text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <span id="theme-label" class="hidden sm:inline">Modo Escuro</span>
+        </button>
+
+        <!-- Botão Hambúrguer para Celular -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menu de navegação"
+          class="md:hidden p-2.5 rounded-xl border border-purple-200/80 dark:border-purple-500/25 bg-white/80 dark:bg-night-850/90 text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/80 dark:hover:bg-night-800 transition-colors"
+        >
+          <svg id="menu-open-icon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Menu Dropdown Responsivo (Mobile) -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-purple-200/60 dark:border-purple-500/15 bg-white/95 dark:bg-night-900/95 backdrop-blur-xl px-4 pt-3 pb-5 space-y-1.5 shadow-lg">
+      <a href="#inicio" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-semibold text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/70 dark:hover:bg-white/5">Início</a>
+      <a href="#sobre" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-semibold text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/70 dark:hover:bg-white/5">Sobre Mim</a>
+      <a href="#interesses" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-semibold text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/70 dark:hover:bg-white/5">Interesses</a>
+      <a href="#pompeia" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-semibold text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/70 dark:hover:bg-white/5">Pompeia - SP</a>
+      <a href="#contato" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-semibold text-[#1E1533] dark:text-purple-100 hover:bg-purple-100/70 dark:hover:bg-white/5">Contato</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================================
+         2. SEÇÃO HERO (Destaque principal com Monograma LB e Boas-vindas)
+         ===================================================================== -->
+    <section id="inicio" class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Coluna de Texto (Esquerda) -->
+          <div class="lg:col-span-7 text-center lg:text-left space-y-6" data-reveal>
+            <!-- Badge de Boas-vindas -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 dark:bg-night-850/90 border border-purple-200/80 dark:border-purple-500/25 shadow-sm backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span>
+              <span class="text-xs sm:text-sm font-semibold text-purple-800 dark:text-purple-200">
+                Olá! Bem-vindo ao meu cantinho ✨
+              </span>
+            </div>
+
+            <!-- Título Principal e Subtítulo -->
+            <div class="space-y-3">
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E1533] dark:text-white leading-tight">
+                Lara <span class="bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 dark:from-purple-300 dark:via-fuchsia-300 dark:to-pink-300 bg-clip-text text-transparent">Brenda</span>
+              </h1>
+              <p class="inline-flex items-center justify-center lg:justify-start gap-2 text-base sm:text-lg font-semibold text-purple-700 dark:text-purple-300">
+                <svg class="w-5 h-5 text-pink-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>17 anos • Pompeia, SP</span>
+              </p>
+            </div>
+
+            <!-- Texto de Apresentação (Fácil de editar!) -->
+            <!-- EDITE AQUI: Personalize sua frase de boas-vindas abaixo -->
+            <p class="max-w-xl mx-auto lg:mx-0 text-base sm:text-lg leading-relaxed text-[#52456E] dark:text-purple-100/80">
+              Oi! Eu sou a Lara. Criei este espaço para compartilhar um pouquinho da minha história, minhas paixões, ideias criativas e os sonhos que venho construindo aqui no interior de São Paulo. Fique à vontade para explorar!
+            </p>
+
+            <!-- Botões de Ação -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+              <a href="#sobre" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold text-sm sm:text-base shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all hover:-translate-y-0.5 text-center">
+                Sobre Mim
+              </a>
+              <a href="#contato" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-white/85 dark:bg-night-850/90 hover:bg-purple-100/80 dark:hover:bg-night-800 text-[#1E1533] dark:text-purple-100 border border-purple-200/90 dark:border-purple-500/25 font-semibold text-sm sm:text-base shadow-sm transition-all hover:-translate-y-0.5 text-center">
+                Fale Comigo
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna Visual / Avatar com Monograma LB (Direita) -->
+          <div class="lg:col-span-5 flex justify-center" data-reveal>
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
+              
+              <!-- Anéis orbitais decorativos -->
+              <div aria-hidden="true" class="absolute inset-0 rounded-full border-2 border-dashed border-purple-300/70 dark:border-purple-500/25 animate-[spin_28s_linear_infinite]"></div>
+              <div aria-hidden="true" class="absolute inset-4 rounded-full bg-gradient-to-tr from-purple-400/25 via-pink-300/25 to-indigo-300/25 dark:from-purple-600/25 dark:via-fuchsia-600/20 dark:to-indigo-600/25 blur-xl"></div>
+
+              <!-- Card Circular Principal com Monograma LB -->
+              <div class="relative w-52 h-52 sm:w-64 sm:h-64 rounded-[2.5rem] rotate-3 hover:rotate-0 transition-transform duration-500 bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-400 p-1 shadow-2xl shadow-purple-500/30 animate-float">
+                <div class="w-full h-full rounded-[2.35rem] bg-white/95 dark:bg-night-900/95 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
+                  <span class="font-display text-6xl sm:text-7xl font-extrabold tracking-tighter bg-gradient-to-br from-purple-600 via-fuchsia-500 to-pink-500 dark:from-purple-300 dark:via-fuchsia-300 dark:to-pink-300 bg-clip-text text-transparent select-none">
+                    LB
+                  </span>
+                  <span class="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-purple-600/80 dark:text-purple-300/80">
+                    Lara Brenda
+                  </span>
+                  <div class="mt-3 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                    <span class="w-2 h-2 rounded-full bg-fuchsia-400"></span>
+                    <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Elemento Flutuante 1 (Superior Esquerdo) -->
+              <div class="absolute -top-2 -left-2 sm:top-1 sm:-left-4 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-night-850/95 border border-purple-200/80 dark:border-purple-500/25 shadow-lg backdrop-blur-md flex items-center gap-2 animate-float-delayed">
+                <span class="text-base">💜</span>
+                <span class="text-xs font-bold text-[#1E1533] dark:text-purple-100">Criativa & Sonhadora</span>
+              </div>
+
+              <!-- Elemento Flutuante 2 (Inferior Direito) -->
+              <div class="absolute -bottom-2 -right-2 sm:bottom-2 sm:-right-4 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-night-850/95 border border-pink-200/80 dark:border-pink-500/25 shadow-lg backdrop-blur-md flex items-center gap-2 animate-float">
+                <span class="text-base">🌸</span>
+                <span class="text-xs font-bold text-[#1E1533] dark:text-purple-100">Pompeia • SP</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3. SEÇÃO "SOBRE MIM" (História pessoal + Cards de Destaques Rápidos)
+         ===================================================================== -->
+    <section id="sobre" class="py-16 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16 space-y-3" data-reveal>
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 dark:bg-purple-500/15 text-purple-700 dark:text-purple-300">
+            Um pouco sobre mim
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1E1533] dark:text-white">
+            Vivendo a fase dos 17 anos ✨
+          </h2>
+          <p class="text-sm sm:text-base text-[#5B4E75] dark:text-purple-200/75">
+            Entre estudos, descobertas e planos para o futuro, cada dia é uma chance de aprender algo novo.
+          </p>
+        </div>
+
+        <!-- Conteúdo Principal: Texto Pessoal + Grid de 4 Destaques -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Card de Apresentação Pessoal (Esquerda) -->
+          <div class="lg:col-span-7 rounded-3xl p-7 sm:p-9 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-xl shadow-purple-900/5 flex flex-col justify-between space-y-6" data-reveal>
+            <!-- EDITE AQUI: Seu texto completo sobre quem você é -->
+            <div class="space-y-4 text-[#453861] dark:text-purple-100/85 text-base sm:text-lg leading-relaxed">
+              <p>
+                Ter <strong class="text-purple-700 dark:text-purple-300 font-semibold">17 anos</strong> é estar exatamente naquela fase especial em que tudo parece cheio de possibilidades. Estou em um momento de muitas descobertas, focada nos meus estudos, explorando meus talentos e desenhando os próximos passos dos meus sonhos.
+              </p>
+              <p>
+                Moro em <strong class="text-pink-600 dark:text-pink-300 font-semibold">Pompeia, SP</strong>, onde valorizo os momentos simples ao lado das pessoas que amo, boas conversas, playlists que marcam cada fase e projetos criativos que me inspiram a crescer todos os dias.
+              </p>
+              <p>
+                Acredito que cada detalhe conta — seja organizando novas metas, registrando memórias especiais ou aprendendo habilidades novas para transformar ideias em realidade.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-purple-100 dark:border-purple-500/15 flex flex-wrap items-center gap-2 text-xs font-semibold text-purple-700 dark:text-purple-300">
+              <span class="px-3 py-1.5 rounded-xl bg-purple-100/80 dark:bg-purple-500/15">#17Anos</span>
+              <span class="px-3 py-1.5 rounded-xl bg-pink-100/80 dark:bg-pink-500/15 text-pink-700 dark:text-pink-300">#NovosProjetos</span>
+              <span class="px-3 py-1.5 rounded-xl bg-indigo-100/80 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">#InteriorDeSP</span>
+            </div>
+          </div>
+
+          <!-- Cards de Destaques Rápidos (Direita) -->
+          <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4" data-reveal>
+            
+            <!-- Destaque 1: Idade -->
+            <div class="rounded-2xl p-5 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-purple-400 dark:hover:border-purple-400/50 transition-all flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-300 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#6E608A] dark:text-purple-300/70">Idade</p>
+                <p class="font-display text-lg font-bold text-[#1E1533] dark:text-white">17 anos</p>
+              </div>
+            </div>
+
+            <!-- Destaque 2: Cidade -->
+            <div class="rounded-2xl p-5 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-pink-400 dark:hover:border-pink-400/50 transition-all flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-pink-100 dark:bg-pink-500/20 text-pink-600 dark:text-pink-300 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#6E608A] dark:text-purple-300/70">Cidade</p>
+                <p class="font-display text-lg font-bold text-[#1E1533] dark:text-white">Pompeia - SP</p>
+              </div>
+            </div>
+
+            <!-- Destaque 3: Fase atual -->
+            <div class="rounded-2xl p-5 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-indigo-400 dark:hover:border-indigo-400/50 transition-all flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#6E608A] dark:text-purple-300/70">Fase atual</p>
+                <p class="font-display text-lg font-bold text-[#1E1533] dark:text-white">Estudos & Novos Projetos</p>
+              </div>
+            </div>
+
+            <!-- Destaque 4: Vibe -->
+            <div class="rounded-2xl p-5 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-fuchsia-400 dark:hover:border-fuchsia-400/50 transition-all flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-fuchsia-100 dark:bg-fuchsia-500/20 text-fuchsia-600 dark:text-fuchsia-300 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-[#6E608A] dark:text-purple-300/70">Vibe</p>
+                <p class="font-display text-lg font-bold text-[#1E1533] dark:text-white">Criativa & Curiosa</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. SEÇÃO "MEUS INTERESSES" (Cards interativos com nota clicável)
+         ===================================================================== -->
+    <section id="interesses" class="py-16 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16 space-y-3" data-reveal>
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-pink-100 dark:bg-pink-500/15 text-pink-700 dark:text-pink-300">
+            O que me inspira
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1E1533] dark:text-white">
+            Meus Interesses 💜
+          </h2>
+          <p class="text-sm sm:text-base text-[#5B4E75] dark:text-purple-200/75">
+            Clique em qualquer card abaixo para abrir uma pequena nota pessoal sobre o que eu mais amo fazer.
+          </p>
+        </div>
+
+        <!-- Grade de 6 Cards Interativos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1: Música & Playlists -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white flex items-center justify-center shadow-md shadow-purple-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-purple-100/90 dark:bg-purple-500/15 text-purple-700 dark:text-purple-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Música & Playlists
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Uma trilha sonora certa transforma qualquer momento comum em uma lembrança inesquecível.
+            </p>
+            <!-- Nota expansível ao clicar -->
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-purple-800 dark:text-purple-200 bg-purple-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              🎧 <strong>Nota da Lara:</strong> Amo montar playlists temáticas para estudar, relaxar no fim da tarde ou viajar. Sempre tem uma música nova no repeat!
+            </div>
+          </button>
+
+          <!-- Card 2: Estudos & Futuro -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white flex items-center justify-center shadow-md shadow-indigo-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-indigo-100/90 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Estudos & Futuro
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Dedicação hoje para abrir portas incríveis e conquistar meus maiores objetivos amanhã.
+            </p>
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-indigo-900 dark:text-indigo-200 bg-indigo-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              📚 <strong>Nota da Lara:</strong> Gosto de organizar minhas metas em cadernos e planners digitais, sempre buscando aprender coisas que façam sentido para o meu futuro.
+            </div>
+          </button>
+
+          <!-- Card 3: Fotografia & Estética -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-400 text-white flex items-center justify-center shadow-md shadow-pink-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-pink-100/90 dark:bg-pink-500/15 text-pink-700 dark:text-pink-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Fotografia & Estética
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Capturar pores do sol, luzes suaves e pequenos detalhes bonitos do dia a dia.
+            </p>
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-pink-900 dark:text-pink-200 bg-pink-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              📸 <strong>Nota da Lara:</strong> Tenho uma galeria cheia de fotos do céu de Pompeia no fim da tarde e referências de design, cores e estética minimalista.
+            </div>
+          </button>
+
+          <!-- Card 4: Livros & Séries -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white flex items-center justify-center shadow-md shadow-fuchsia-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-fuchsia-100/90 dark:bg-fuchsia-500/15 text-fuchsia-700 dark:text-fuchsia-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Livros & Séries
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Histórias envolventes que inspiram, emocionam e fazem viajar sem sair do lugar.
+            </p>
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-fuchsia-900 dark:text-fuchsia-200 bg-fuchsia-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              🎬 <strong>Nota da Lara:</strong> Nada melhor do que maratonar uma série boa no fim de semana ou me perder nas páginas de um livro envolvente com um café ou chocolate quente.
+            </div>
+          </button>
+
+          <!-- Card 5: Tecnologia & Criatividade -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-500 text-white flex items-center justify-center shadow-md shadow-violet-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-violet-100/90 dark:bg-violet-500/15 text-violet-700 dark:text-violet-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Tecnologia & Criatividade
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Curiosidade pelo mundo digital, design e ferramentas que dão vida a ideias originais.
+            </p>
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-violet-900 dark:text-violet-200 bg-violet-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              💻 <strong>Nota da Lara:</strong> Ter este site pessoal já é parte dessa vontade de criar meu próprio espaço na internet e explorar novas possibilidades criativas!
+            </div>
+          </button>
+
+          <!-- Card 6: Amigos & Momentos -->
+          <button
+            type="button"
+            aria-expanded="false"
+            class="interest-card group text-left rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-night-850/80 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500"
+            data-reveal
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-400 to-purple-500 text-white flex items-center justify-center shadow-md shadow-rose-500/25 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <span class="card-badge px-2.5 py-1 rounded-full text-[11px] font-semibold bg-rose-100/90 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300">
+                Ver nota +
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-bold text-[#1E1533] dark:text-white">
+              Amigos & Momentos
+            </h3>
+            <p class="mt-2 text-sm text-[#5B4E75] dark:text-purple-200/75">
+              Risadas sinceras, rolês leves e companhias que tornam qualquer dia muito melhor.
+            </p>
+            <div class="interest-note hidden mt-4 pt-4 border-t border-purple-200/60 dark:border-purple-500/20 text-sm text-rose-900 dark:text-rose-200 bg-rose-50/80 dark:bg-night-900/70 rounded-2xl p-3.5">
+              ✨ <strong>Nota da Lara:</strong> Guardo com muito carinho as amizades verdadeiras e os momentos espontâneos que viram histórias para contar depois.
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. SEÇÃO "DE POMPEIA PARA O MUNDO" (Destaque afetivo da cidade)
+         ===================================================================== -->
+    <section id="pompeia" class="py-16 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" data-reveal>
+        <div class="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-purple-600 via-fuchsia-600 to-pink-500 dark:from-night-800 dark:via-purple-900/90 dark:to-fuchsia-950 p-8 sm:p-12 lg:p-14 text-white shadow-2xl shadow-purple-500/20 border border-white/20 dark:border-purple-400/20">
+          
+          <!-- Brilhos decorativos internos -->
+          <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/15 blur-2xl pointer-events-none"></div>
+          <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-pink-300/20 blur-2xl pointer-events-none"></div>
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Texto sobre Pompeia - SP -->
+            <div class="lg:col-span-8 space-y-5">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-bold uppercase tracking-wider">
+                <svg class="w-4 h-4 text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Raízes no Interior Paulista</span>
+              </div>
+
+              <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                De Pompeia para o Mundo 🌍
+              </h2>
+
+              <p class="text-base sm:text-lg text-purple-50/95 leading-relaxed max-w-2xl">
+                Morar em <strong>Pompeia, no interior de São Paulo</strong>, traz aquele equilíbrio especial entre o acolhimento de uma cidade tranquila e a vontade gigante de conquistar o mundo. É daqui que cultivo minhas raízes, minha família, minhas amizades e a inspiração para sonhar alto todos os dias.
+              </p>
+
+              <div class="pt-2 flex flex-wrap gap-3">
+                <div class="px-4 py-2.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold">
+                  📍 Pompeia • Estado de São Paulo
+                </div>
+                <div class="px-4 py-2.5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold">
+                  ✨ Raízes fortes, sonhos sem limites
+                </div>
+              </div>
+            </div>
+
+            <!-- Cartão Postal Ilustrativo em SVG -->
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="w-full max-w-xs rounded-3xl bg-white/15 backdrop-blur-xl border border-white/25 p-6 text-center shadow-xl">
+                <div class="w-20 h-20 mx-auto rounded-2xl bg-white/20 flex items-center justify-center mb-4">
+                  <!-- Ícone Bússola / Horizonte -->
+                  <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p class="font-display text-lg font-bold">Pompeia, SP</p>
+                <p class="text-xs text-purple-100/85 mt-1">Interior de São Paulo • Brasil</p>
+                <div class="mt-4 pt-4 border-t border-white/20 text-xs font-medium text-pink-100">
+                  “Não importa quão longe a gente vá, o lar sempre mora no coração.”
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6. SEÇÃO "CONTATO & REDES" (Links Sociais + Formulário "Mande um oi!")
+         ===================================================================== -->
+    <section id="contato" class="py-16 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16 space-y-3" data-reveal>
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 dark:bg-purple-500/15 text-purple-700 dark:text-purple-300">
+            Vamos conversar
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#1E1533] dark:text-white">
+            Contato & Redes Sociais 💌
+          </h2>
+          <p class="text-sm sm:text-base text-[#5B4E75] dark:text-purple-200/75">
+            Me acompanhe nas redes ou deixe um recadinho direto por aqui. Vou adorar ler!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Coluna Esquerda: Redes Sociais (Prontas para inserir seus usuários!) -->
+          <div class="lg:col-span-5 space-y-4" data-reveal>
+            <h3 class="font-display text-lg font-bold text-[#1E1533] dark:text-white px-1">
+              Onde me encontrar
+            </h3>
+
+            <!-- EDITE AQUI: Troque o "#" pelo link real do seu Instagram -->
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/85 dark:bg-night-850/85 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-pink-400 dark:hover:border-pink-400/50 hover:-translate-y-0.5 transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center shadow-sm">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-display font-bold text-sm text-[#1E1533] dark:text-white">Instagram</p>
+                  <p class="text-xs text-[#6E608A] dark:text-purple-300/75">@larabrenda</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-purple-600 dark:text-purple-300 group-hover:translate-x-1 transition-transform">
+                Seguir →
+              </span>
+            </a>
+
+            <!-- EDITE AQUI: Troque o link abaixo pelo seu perfil do TikTok -->
+            <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/85 dark:bg-night-850/85 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-purple-400 dark:hover:border-purple-400/50 hover:-translate-y-0.5 transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-800 to-purple-950 text-white flex items-center justify-center shadow-sm">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-display font-bold text-sm text-[#1E1533] dark:text-white">TikTok</p>
+                  <p class="text-xs text-[#6E608A] dark:text-purple-300/75">@larabrenda</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-purple-600 dark:text-purple-300 group-hover:translate-x-1 transition-transform">
+                Ver perfil →
+              </span>
+            </a>
+
+            <!-- EDITE AQUI: Troque o link abaixo pelo seu perfil ou playlist do Spotify -->
+            <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between p-4 rounded-2xl bg-white/85 dark:bg-night-850/85 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm hover:border-emerald-400 dark:hover:border-emerald-400/50 hover:-translate-y-0.5 transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-sm">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-display font-bold text-sm text-[#1E1533] dark:text-white">Spotify</p>
+                  <p class="text-xs text-[#6E608A] dark:text-purple-300/75">Playlists da Lara</p>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-purple-600 dark:text-purple-300 group-hover:translate-x-1 transition-transform">
+                Ouvir →
+              </span>
+            </a>
+
+            <!-- Card de E-mail com Botão de Copiar -->
+            <div class="flex items-center justify-between p-4 rounded-2xl bg-white/85 dark:bg-night-850/85 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-sm">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center shadow-sm shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="min-w-0">
+                  <p class="font-display font-bold text-sm text-[#1E1533] dark:text-white">E-mail</p>
+                  <!-- EDITE AQUI: Seu endereço de e-mail -->
+                  <p id="lara-email" class="text-xs text-[#6E608A] dark:text-purple-300/75 truncate">larabrenda.contato@email.com</p>
+                </div>
+              </div>
+              <button
+                id="copy-email-btn"
+                type="button"
+                class="shrink-0 ml-2 px-3 py-2 rounded-xl bg-purple-100 dark:bg-purple-500/20 hover:bg-purple-200 dark:hover:bg-purple-500/30 text-purple-700 dark:text-purple-200 text-xs font-semibold transition-colors active:scale-95"
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Formulário Interativo "Mande um oi!" -->
+          <div class="lg:col-span-7 rounded-3xl p-6 sm:p-8 lg:p-9 bg-white/85 dark:bg-night-850/85 backdrop-blur-md border border-purple-200/70 dark:border-purple-500/20 shadow-xl shadow-purple-900/5" data-reveal>
+            <div class="mb-6">
+              <h3 class="font-display text-2xl font-bold text-[#1E1533] dark:text-white">
+                Mande um oi! 👋✨
+              </h3>
+              <p class="text-sm text-[#5B4E75] dark:text-purple-200/75 mt-1">
+                Tem alguma ideia, sugestão de playlist ou só quer deixar uma mensagem legal? Escreva aqui embaixo!
+              </p>
+            </div>
+
+            <!-- Formulário -->
+            <form id="contact-form" class="space-y-5" novalidate>
+              <div>
+                <label for="sender-name" class="block text-sm font-semibold text-[#1E1533] dark:text-purple-100 mb-2">
+                  Seu Nome
+                </label>
+                <input
+                  id="sender-name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Como posso te chamar?"
+                  class="w-full px-4 py-3.5 rounded-2xl bg-lilac-50/90 dark:bg-night-900/90 border border-purple-200 dark:border-purple-500/25 text-[#1E1533] dark:text-white placeholder-[#8B7DA6] dark:placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                />
+                <p id="name-error" class="hidden mt-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
+                  Por favor, digite seu nome antes de enviar.
+                </p>
+              </div>
+
+              <div>
+                <label for="sender-message" class="block text-sm font-semibold text-[#1E1533] dark:text-purple-100 mb-2">
+                  Sua Mensagem
+                </label>
+                <textarea
+                  id="sender-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Escreva sua mensagem para a Lara..."
+                  class="w-full px-4 py-3.5 rounded-2xl bg-lilac-50/90 dark:bg-night-900/90 border border-purple-200 dark:border-purple-500/25 text-[#1E1533] dark:text-white placeholder-[#8B7DA6] dark:placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base resize-none"
+                ></textarea>
+                <p id="message-error" class="hidden mt-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
+                  Escreva uma mensagenzinha para continuar ✨
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold text-sm sm:text-base shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2"
+              >
+                <span>Enviar Mensagem</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </button>
+            </form>
+
+            <!-- Feedback Visual Amigável após Envio -->
+            <div id="form-success" class="hidden rounded-2xl p-6 bg-gradient-to-br from-purple-100/90 to-pink-100/90 dark:from-purple-900/40 dark:to-pink-900/30 border border-purple-300/70 dark:border-purple-400/30 text-center space-y-3">
+              <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center shadow-md">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h4 class="font-display text-lg font-bold text-[#1E1533] dark:text-white">
+                Obrigada pelo carinho, <span id="feedback-name" class="text-purple-700 dark:text-purple-300">visitante</span>! 💜
+              </h4>
+              <p class="text-sm text-[#4A3D66] dark:text-purple-200/85 max-w-md mx-auto">
+                Sua mensagem foi recebida com sucesso! Fico muito feliz por você ter passado pelo meu cantinho.
+              </p>
+              <button
+                id="reset-form-btn"
+                type="button"
+                class="mt-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/80 dark:bg-night-850 text-xs font-semibold text-purple-700 dark:text-purple-200 border border-purple-200 dark:border-purple-500/25 hover:bg-white transition-colors"
+              >
+                Enviar outra mensagem
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       7. RODAPÉ
+       ===================================================================== -->
+  <footer class="border-t border-purple-200/60 dark:border-purple-500/15 bg-white/60 dark:bg-night-950/80 backdrop-blur-md py-8 sm:py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <p class="text-sm font-medium text-[#4A3D66] dark:text-purple-200/80">
+        Desenvolvido com 💜 por Lara Brenda • Pompeia, SP
+      </p>
+      <a href="#inicio" class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-700 dark:text-purple-300 hover:text-pink-600 dark:hover:text-pink-300 transition-colors">
+        <span>Voltar ao topo</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       NOTIFICAÇÃO TOAST FLUTUANTE (Substitui qualquer alert() com elegância)
+       ===================================================================== -->
+  <div
+    id="toast-notification"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 z-50 translate-y-24 opacity-0 pointer-events-none transition-all duration-300 max-w-xs sm:max-w-sm rounded-2xl px-4 py-3.5 bg-[#1E1533] dark:bg-white text-white dark:text-[#1E1533] shadow-2xl flex items-center gap-3 text-sm font-semibold"
+  >
+    <span class="text-base">✨</span>
+    <span id="toast-message">Ação concluída!</span>
+  </div>
+
+  <!-- =====================================================================
+       JAVASCRIPT INTERATIVO (Tema, Menu Mobile, Cards, Formulário e Scroll)
+       ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // -------------------------------------------------------------------
+      // 1. ALTERNÂNCIA ENTRE MODO CLARO E MODO ESCURO
+      // -------------------------------------------------------------------
+      const htmlEl = document.documentElement;
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeLabel = document.getElementById('theme-label');
+
+      function updateThemeLabel() {
+        const isDark = htmlEl.classList.contains('dark');
+        if (themeLabel) {
+          themeLabel.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+        }
+      }
+
+      updateThemeLabel();
+
+      themeToggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        const isDark = htmlEl.classList.contains('dark');
+        try {
+          localStorage.setItem('lara-theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
+        updateThemeLabel();
+      });
+
+      // -------------------------------------------------------------------
+      // 2. MENU RESPONSIVO (MOBILE)
+      // -------------------------------------------------------------------
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-open-icon');
+      const closeIcon = document.getElementById('menu-close-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu(forceClose = false) {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        const shouldOpen = forceClose ? false : !isOpen;
+
+        mobileMenu.classList.toggle('hidden', !shouldOpen);
+        openIcon.classList.toggle('hidden', shouldOpen);
+        closeIcon.classList.toggle('hidden', !shouldOpen);
+        mobileMenuBtn.setAttribute('aria-expanded', String(shouldOpen));
+      }
+
+      mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => toggleMobileMenu(true));
+      });
+
+      // -------------------------------------------------------------------
+      // 3. CARDS DE INTERESSES INTERATIVOS (Clique para ler a nota)
+      // -------------------------------------------------------------------
+      const interestCards = document.querySelectorAll('.interest-card');
+
+      interestCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const note = card.querySelector('.interest-note');
+          const badge = card.querySelector('.card-badge');
+          const isExpanded = card.getAttribute('aria-expanded') === 'true';
+
+          card.setAttribute('aria-expanded', String(!isExpanded));
+          note.classList.toggle('hidden', isExpanded);
+          card.classList.toggle('ring-2', !isExpanded);
+          card.classList.toggle('ring-purple-400', !isExpanded);
+          card.classList.toggle('dark:ring-purple-400/60', !isExpanded);
+
+          if (badge) {
+            badge.textContent = !isExpanded ? 'Fechar −' : 'Ver nota +';
+          }
+        });
+      });
+
+      // -------------------------------------------------------------------
+      // 4. NOTIFICAÇÃO TOAST AMIGÁVEL
+      // -------------------------------------------------------------------
+      const toastEl = document.getElementById('toast-notification');
+      const toastMsgEl = document.getElementById('toast-message');
+      let toastTimeout;
+
+      function showToast(message) {
+        toastMsgEl.textContent = message;
+        toastEl.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toastEl.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        }, 3400);
+      }
+
+      // -------------------------------------------------------------------
+      // 5. COPIAR E-MAIL COM UM CLIQUE
+      // -------------------------------------------------------------------
+      const copyEmailBtn = document.getElementById('copy-email-btn');
+      const laraEmailEl = document.getElementById('lara-email');
+
+      if (copyEmailBtn && laraEmailEl) {
+        copyEmailBtn.addEventListener('click', () => {
+          const emailText = laraEmailEl.textContent.trim();
+          const tempInput = document.createElement('input');
+          tempInput.value = emailText;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          try {
+            document.execCommand('copy');
+            showToast('E-mail copiado para a área de transferência! 💜');
+          } catch (err) {
+            showToast('E-mail: ' + emailText);
+          }
+          document.body.removeChild(tempInput);
+        });
+      }
+
+      // -------------------------------------------------------------------
+      // 6. FORMULÁRIO INTERATIVO "MANDE UM OI!"
+      // -------------------------------------------------------------------
+      const contactForm = document.getElementById('contact-form');
+      const nameInput = document.getElementById('sender-name');
+      const messageInput = document.getElementById('sender-message');
+      const nameError = document.getElementById('name-error');
+      const messageError = document.getElementById('message-error');
+      const formSuccess = document.getElementById('form-success');
+      const feedbackName = document.getElementById('feedback-name');
+      const resetFormBtn = document.getElementById('reset-form-btn');
+
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nameValue = nameInput.value.trim();
+        const messageValue = messageInput.value.trim();
+        let hasError = false;
+
+        if (!nameValue) {
+          nameError.classList.remove('hidden');
+          hasError = true;
+        } else {
+          nameError.classList.add('hidden');
+        }
+
+        if (!messageValue) {
+          messageError.classList.remove('hidden');
+          hasError = true;
+        } else {
+          messageError.classList.add('hidden');
+        }
+
+        if (hasError) return;
+
+        // Exibe o cartão de agradecimento personalizado
+        feedbackName.textContent = nameValue;
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        showToast('Mensagem enviada com carinho para a Lara! 💌');
+      });
+
+      resetFormBtn.addEventListener('click', () => {
+        contactForm.reset();
+        formSuccess.classList.add('hidden');
+        contactForm.classList.remove('hidden');
+        nameInput.focus();
+      });
+
+      // -------------------------------------------------------------------
+      // 7. ANIMAÇÕES SUAVES AO ROLAR A PÁGINA (IntersectionObserver)
+      // -------------------------------------------------------------------
+      const revealElements = document.querySelectorAll('[data-reveal]');
+
+      if ('IntersectionObserver' in window) {
+        revealElements.forEach(el => {
+          el.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-700', 'ease-out');
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('opacity-0', 'translate-y-6');
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+      }
+    });
+  </script>
+</body>
+</html>
